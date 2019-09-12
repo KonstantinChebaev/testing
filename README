@@ -1,1 +1,49 @@
+There are three programs wich written to get started an internship.
+
+1. Console Calculator
+
+General description
+It is a calculator for evaluating arithmetic expressions.
+
+An expression can consist of:
+
+Digits (0-9)
+Dots as decimal marks (valid example: 100.02, not valid example : 100..02)
+Parentheses
+Mathematical symbols (allowed are : "+", "-", "*", "/")
+
+Input and expected output
+Input : String containing arithmetic expression
+Output : evaluation result or null if the expression cannot be evaluated
+
+2. Pyramid builder
+
+General description
+This program build a pyramid from given input list of integer values.
+
+For example, for input A={2, 4, 3, 5, 6, 1} the pyramid will look like:
+[0,0,1,0,0]
+[0,2,0,3,0]
+[4,0,5,0,6]
+
+Refer to unit-tests for more examples.
+
+Input and expected output
+Input : List with integer values
+Output : 2D array with the pyramid or CannotBuildPyramidException if it's not possible to build one
+
+3. Subsequence
+General description
+Given two sequences {X} and {Y} of arbitrary elements (java.lang.Object).
+
+Program determine whether {X} can be built by removing some elements from {Y} without changing the order.
+
+Input and expected output
+Input : List X and List Y
+Output : boolean, true if {X} can be built from {Y}, false otherwise
+
+Examples
+{X} : "A", "B", "C", "D"
+
+{Y} : "BD", "A", "ABC", "B", "M", "D", "M","C", "DC", "D"
 
