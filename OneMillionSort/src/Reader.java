@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Writer {
+public class Reader {
     public static void readFile (){
         String line = "";
         File file = new File("res/lng.csv");

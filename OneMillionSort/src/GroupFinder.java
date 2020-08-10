@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Cat {
+public class GroupFinder {
     private static HashMap<Integer, Integer> firstNums = new HashMap<>();
     private static HashMap<Integer, Integer> secNums = new HashMap<>();
     private static HashMap<Integer, Integer> therdNums = new HashMap<>();
@@ -35,7 +35,6 @@ public class Cat {
         allRawLines.add(line);
         String[] lines = line.split(";");
         if (lines.length < 3) {
-            System.out.println(line);
             currentId++;
             return;
         }

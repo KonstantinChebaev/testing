@@ -4,9 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Rreader {
-
-
+public class Writer {
     public static void printAllGroups (){
         ArrayList<ArrayList<Integer>> groups = GroupFinder.getSortedGroups();
         ArrayList<String> lines = GroupFinder.getAllRawLines();
