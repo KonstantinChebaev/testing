@@ -28,10 +28,6 @@ public class GroupFinder {
 
 
     public static void addNums(String line) {
-//        if(currentId == 510050){
-//            System.out.println(line);
-//            System.exit(0);
-//        }
         allRawLines.add(line);
         String[] lines = line.split(";");
         if (lines.length < 3) {
