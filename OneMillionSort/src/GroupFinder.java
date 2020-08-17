@@ -62,34 +62,49 @@ public class GroupFinder {
     }
 
     private static void group(int newMember, int oldMember) {
+        System.out.println("Найдено совпадение:"+newMember +" and "+oldMember);
         ArrayList<Integer> oldMemberGroup = null;
         ArrayList<Integer> newMemberGroup = null;
+        int newMemberGroups = 0;
+        int oldMemberGroups = 0;
         for (ArrayList<Integer> list : allGroups) {
             if (list.contains(oldMember)) {
                 oldMemberGroup = list;
+                oldMemberGroups++;
             }
             if (list.contains(newMember)) {
                 newMemberGroup = list;
+                newMemberGroups++;
             }
         }
-        if (oldMemberGroup == null && newMemberGroup == null) {
-            ArrayList<Integer> newGroup = new ArrayList<>();
-            newGroup.add(oldMember);
-            newGroup.add(newMember);
-            allGroups.add(newGroup);
-            return;
-        }
-        if (oldMemberGroup != null) {
+        System.out.println(newMemberGroups+" "+oldMemberGroups);
+        if (oldMemberGroup == null) {
+            if(newMemberGroup == null) {
+                ArrayList<Integer> newGroup = new ArrayList<>();
+                newGroup.add(oldMember);
+                newGroup.add(newMember);
+                allGroups.add(newGroup);
+                System.out.println("Объединены в одну новую группу");
+            } else {
+                newMemberGroup.add(newMember);
+                System.out.println(newMember + " добавлена в группу " + oldMember);
+            }
+        } else {
             if (newMemberGroup == null) {
                 oldMemberGroup.add(newMember);
+                System.out.println(oldMember + " добавлена в группу " + newMember);
             } else {
-                if(oldMemberGroup.equals(newMemberGroup)){
+                if(oldMemberGroup.hashCode() == newMemberGroup.hashCode()){
+                    System.out.println("Объекты уже в одной группе");
                     return;
                 }
+                newMemberGroup.remove(newMember);
                 oldMemberGroup.addAll(newMemberGroup);
                 allGroups.remove(newMemberGroup);
+                System.out.println("Объединены в одну группу");
             }
         }
+
     }
 
     public static ArrayList<String> getAllRawLines() {
